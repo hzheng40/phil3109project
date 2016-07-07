@@ -15,31 +15,56 @@
 			font-family:Helvetica;
 			font-size:10px;
 }
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
-</script><tw-passagedata pid="1" name="Introduction" tags="script stylesheet" position="443,44">You are an employee for InterSpace.  You recently transferred to Texas, where you are expecting promotion based on you successful rocket design.  You have been assisting in testing for the past few weeks, and it will be launched in the next few days.  You have been trying to make new friends at work, but there has been little time with the launch coming up.  It doesn’t help that there aren’t many other women around space industries.  But after this launch, there should be some down time and you will get a good promotion.  And you will get to spend more time with your husband.  Of course, during the design, you had to make some critical decisions, which you have noted down here in your notebook...
-[[Next-&gt;Notebook]] </tw-passagedata>
+
+</script><tw-passagedata pid="1" name="Introduction" tags="script stylesheet" position="443,44">You are an employee for InterSpace.  You recently transferred to Texas, where you are expecting promotion based on you successful rocket design.  You have been assisting in testing for the past few weeks, and it will be launched in the next few days.  You have been trying to make new friends at work, but there has been little time with the launch coming up.  It doesn’t help that there aren’t many other women around space industries.  But after this launch, there should be some down time and you will get a good promotion.  And you will get to spend more time with your husband.  Of course, during the design, you had to make some critical decisions, which you have noted down here in your notebook...&lt;br&gt;&lt;br&gt;
+&lt;h3&gt;[[Next-&gt;Notebook]] &lt;/h3&gt;</tw-passagedata>
 <tw-passagedata pid="2" name="Notebook" tags="script stylesheet" position="444,204">“Where’s my notebook” you think to yourself.  You kept all your decisions recorded in them regarding your design choices.  Was it misplaced?  You search your office and are unable to find it.  “Well, I can just make a new one.  I’m pretty sure I remember most of them. Pick a new cover for your notebook:
 
 
+[[Dog-&gt;Dog]] &lt;br&gt;&lt;br&gt;
+[[Parents-&gt;Parents]] &lt;br&gt;&lt;br&gt;
+[[Husband-&gt;Husband]] &lt;br&gt;&lt;br&gt;
+&lt;%= story.passage(&quot;Note&quot;).render() %&gt;</tw-passagedata>
+<tw-passagedata pid="3" name="Dog" tags="script stylesheet" position="271,337">
+&lt;% s.cover = &quot;Dog&quot; %&gt;
+[[Next-&gt;Safety]]</tw-passagedata>
+<tw-passagedata pid="4" name="Husband" tags="script stylesheet" position="453,344">&lt;% s.cover = &quot;Husband&quot; %&gt;
+[[Next-&gt;Safety]]</tw-passagedata>
+<tw-passagedata pid="5" name="Parents" tags="script stylesheet" position="616,329">&lt;% s.cover = &quot;Parents&quot; %&gt;
+[[Next-&gt;Safety]]</tw-passagedata>
+<tw-passagedata pid="6" name="Safety" tags="script stylesheet" position="458,491">When making the rocket, I chose a level of safety required based on the budget.  Let’s see….it was:&lt;br&gt;&lt;br&gt;
+[[80% safety, but nicely under budget.  Saving money always looks good.-&gt;80%]]&lt;br&gt;&lt;br&gt;
+[[90% safety, and barely over budget.  Just the right design for the money.-&gt;90%]]&lt;br&gt;&lt;br&gt;
+[[99.7% safety, but grossly over budget.  But they gave you more money from somewhere, though you had to work a bit to convince them to cut other sections budgets, but it worked out.-&gt;99.7%]]&lt;br&gt;
+&lt;%= story.passage(&quot;Note&quot;).render() %&gt;</tw-passagedata>
+<tw-passagedata pid="7" name="80%" tags="script stylesheet" position="267,639">&lt;% s.quality = 80 %&gt;
+You have decided to set the quality at 80%.&lt;br&gt;&lt;br&gt;
 
-&lt;img src=&#39;http://www.toptenpack.com/wp-content/uploads/2014/12/funny-pics-of-dogs.jpg&#39; [Dog]&gt;
-&lt;img src=&#39;&#39;&gt;
-[[Dog-&gt;Dog]]
-[[Parents-&gt;Parents]] 
-[[Husband-&gt;Husband]] </tw-passagedata>
-<tw-passagedata pid="3" name="Dog" tags="" position="271,337">&lt;&lt;set $cover to dog&gt;&gt;
-[[-&gt;Safety]]</tw-passagedata>
-<tw-passagedata pid="4" name="Husband" tags="" position="453,344">Double-click this passage to edit it.
-[[-&gt;Safety]]</tw-passagedata>
-<tw-passagedata pid="5" name="Parents" tags="" position="616,329">Double-click this passage to edit it.
-[[-&gt;Safety]]</tw-passagedata>
-<tw-passagedata pid="6" name="Safety" tags="script stylesheet" position="458,491">When making the rocket, I chose a level of safety required based on the budget.  Let’s see….it was:
-[[80% safety, but nicely under budget.  Saving money always looks good.-&gt;80%]]
-[[90% safety, and barely over budget.  Just the right design for the money.-&gt;90%]]
-[[99.7% safety, but grossly over budget.  But they gave you more money from somewhere, though you had to work a bit to convince them to cut other sections budgets, but it worked out.-&gt;99.7%]]</tw-passagedata>
-<tw-passagedata pid="7" name="80%" tags="" position="267,639">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="8" name="90%" tags="" position="453,651">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="9" name="99.7%" tags="" position="618,659">Double-click this passage to edit it.</tw-passagedata>
+[[Next-&gt;Crew]] 
+&lt;%= story.passage(&quot;Note&quot;).render() %&gt;</tw-passagedata>
+<tw-passagedata pid="8" name="90%" tags="" position="453,651">&lt;% s.quality = 90 %&gt;
+You have decided to set the quality at 90%.&lt;br&gt;&lt;br&gt;
+[[Next-&gt;Crew]] 
+&lt;%= story.passage(&quot;Note&quot;).render() %&gt;</tw-passagedata>
+<tw-passagedata pid="9" name="99.7%" tags="" position="618,659">&lt;% s.quality = 99.7%&gt;
+You have decided to set the quality at 99.7%.&lt;br&gt;&lt;br&gt;
+[[Next-&gt;Crew]] 
+&lt;%= story.passage(&quot;Note&quot;).render() %&gt;</tw-passagedata>
+<tw-passagedata pid="10" name="Note" tags="script stylesheet" position="728,148">Your cover is: &lt;%= s.cover %&gt;&lt;br&gt;
+Your quality of rocket is: &lt;%= s.quality %&gt;&lt;br&gt;
+
+</tw-passagedata>
+<tw-passagedata pid="11" name="Crew" tags="script stylesheet" position="452,862">After establishing your quality of rocket, it&#39;s time to pick the crew for the mission. Here are some possible choices:&lt;br&gt;
+1. Primary: Pilot, Secondary: Communications export
+2. Primary: Mechanical expert, Secondary: Mining expert
+3. Primary: Mining expert, Secondary: Medic
+4. Primary: Communications expert, Secondary: Mechanical expert
+5. Primary: Mechanical expert, Secondary: Pilot
+6. Primary: Mechanical expert, Secondary: Medic
+
+</tw-passagedata>
 </tw-storydata>
 
 
