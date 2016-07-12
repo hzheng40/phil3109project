@@ -16,8 +16,8 @@
 			font-size:10px;
 }
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">
 
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">
 </script><tw-passagedata pid="1" name="Introduction" tags="script stylesheet" position="443,44">You are an employee for InterSpace.  You recently transferred to Texas, where you are expecting promotion based on you successful rocket design.  You have been assisting in testing for the past few weeks, and it will be launched in the next few days.  You have been trying to make new friends at work, but there has been little time with the launch coming up.  It doesn’t help that there aren’t many other women around space industries.  But after this launch, there should be some down time and you will get a good promotion.  And you will get to spend more time with your husband.  Of course, during the design, you had to make some critical decisions, which you have noted down here in your notebook...&lt;br&gt;&lt;br&gt;
 &lt;h3&gt;[[Next-&gt;Notebook]] &lt;/h3&gt;</tw-passagedata>
 <tw-passagedata pid="2" name="Notebook" tags="script stylesheet" position="444,204">“Where’s my notebook” you think to yourself.  You kept all your decisions recorded in them regarding your design choices.  Was it misplaced?  You search your office and are unable to find it.  “Well, I can just make a new one.  I’m pretty sure I remember most of them. Pick a new cover for your notebook:
@@ -26,6 +26,8 @@
 [[Dog-&gt;Dog]] &lt;br&gt;&lt;br&gt;
 [[Parents-&gt;Parents]] &lt;br&gt;&lt;br&gt;
 [[Husband-&gt;Husband]] &lt;br&gt;&lt;br&gt;
+
+
 &lt;%= story.passage(&quot;Note&quot;).render() %&gt;</tw-passagedata>
 <tw-passagedata pid="3" name="Dog" tags="script stylesheet" position="271,337">
 &lt;% s.cover = &quot;Dog&quot; %&gt;
@@ -56,13 +58,14 @@ You have decided to set the quality at 99.7%.&lt;br&gt;&lt;br&gt;
 Your quality of rocket is: &lt;%= s.quality %&gt;&lt;br&gt;
 
 </tw-passagedata>
-<tw-passagedata pid="11" name="Crew" tags="script stylesheet" position="452,862">After establishing your quality of rocket, it&#39;s time to pick the crew for the mission. Here are some possible choices:&lt;br&gt;
-1. Primary: Pilot, Secondary: Communications export
-2. Primary: Mechanical expert, Secondary: Mining expert
-3. Primary: Mining expert, Secondary: Medic
-4. Primary: Communications expert, Secondary: Mechanical expert
-5. Primary: Mechanical expert, Secondary: Pilot
-6. Primary: Mechanical expert, Secondary: Medic
+<tw-passagedata pid="11" name="Crew" tags="script stylesheet" position="452,862">After establishing your quality of rocket, it&#39;s time to pick the crew for the mission. Here are some possible choices(pick 3 out of 6):&lt;br&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;crew1&quot; value=&quot;1&quot;&gt; 1. Primary: Pilot, Secondary: Communications export&lt;br&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;crew2&quot; value=&quot;2&quot;&gt; 2. Primary: Mechanical expert, Secondary: Mining expert&lt;br&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;crew3&quot; value=&quot;3&quot;&gt; 3. Primary: Mining expert, Secondary: Medic&lt;br&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;crew4&quot; value=&quot;4&quot;&gt; 4. Primary: Communications expert, Secondary: Mechanical expert&lt;br&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;crew5&quot; value=&quot;5&quot;&gt; 5. Primary: Mechanical expert, Secondary: Pilot&lt;br&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;crew6&quot; value=&quot;6&quot;&gt; 6. Primary: Mechanical expert, Secondary: Medic&lt;br&gt;
+
 
 </tw-passagedata>
 </tw-storydata>
