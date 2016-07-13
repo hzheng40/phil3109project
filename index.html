@@ -49,10 +49,21 @@ window.hideNote = function hideNote() {
 window.check = function check() {
   	for (var i = 1; i < 7; i++) {
 	  	if (document.getElementById('crew' + i.toString()).checked) 			{
-		  	window.message = addCrew("crew" + i.toString());
-	  	}
+					window.crew.push("crew" + i.toString());
+			}
 		}
-		document.getElementById('submit').style.visibility = 'hidden';
+		if (crew.length > 3) {
+			alert("You have added too many crew members!");
+			window.crew = new Array();
+	  } else if (crew.length < 3) {
+			alert("You need to pick more crew member!");
+			window.crew = new Array();
+		} else if (crew.length == 3) {
+			document.getElementById('submit').style.visibility = 'hidden';
+			for (var j = 1; j < 7; j++) {
+				document.getElementById('crew'+j.toString()).style.visibility = 'hidden';
+			}
+		}
 }
 
 window.changeCover = function changeCover(string) {
@@ -61,14 +72,6 @@ window.changeCover = function changeCover(string) {
 
 window.changeQuality = function changeQuality(percentage) {
 	window.quality = percentage;
-}
-
-window.addCrew = function addCrew(crewMember) {
-	if (window.crew.length > 3) {
-		alert("You have picked more than 3 crew members!");
-	} else {
-		window.crew.push(crewMember);
-	}
 }
 
 $(window).on('showpassage:after', function (e, data)
