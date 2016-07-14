@@ -10,7 +10,7 @@
 <body>
 <div id="passage"></div>
 
-<tw-storydata name="3109Proj" startnode="13" creator="Twine" creator-version="2.0.11" ifid="7D100640-7C92-42D1-AD7E-69DBD9F0CDCA" format="Snowman" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import 'https://fonts.googleapis.com/css?family=Press+Start+2P';
+<tw-storydata name="3109Proj" startnode="12" creator="Twine" creator-version="2.0.11" ifid="7D100640-7C92-42D1-AD7E-69DBD9F0CDCA" format="Snowman" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import 'https://fonts.googleapis.com/css?family=Press+Start+2P';
 body
 {
 	font-family: 'Press Start 2P';
@@ -30,12 +30,16 @@ a
 	color: white;
 	background-color: black;
 }
+#passage
+{
+	background-color: rgba(255,255,255,0.2);
+	max-width: 60%;
+	margin-top: 100px;
+}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
 
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.click = new Audio("http://soundbible.com/grab.php?id=1682&type=wav");
 window.cover = "You have not picked a cover yet";
 window.quality = "You have not picked a rocket quality yet";
 window.crew = new Array();
@@ -43,6 +47,7 @@ window.message = "";
 window.previous = "";
 
 window.showNote = function showNote() {
+	window.click.play();
   window.story.show('Note');
 }
 
@@ -83,9 +88,11 @@ $(window).on('showpassage:after', function (e, data)
 {
     window.story.checkpoint(data.passage.name);
 });
+
 </script><tw-passagedata pid="1" name="Introduction" tags="script stylesheet" position="441,70">Hi Savannah, you are an employee for InterSpace.  You recently transferred to Texas, where you are expecting promotion based on you successful rocket design.  You have been assisting in testing for the past few weeks, and it will be launched in the next few days.  You have been trying to make new friends at work, but there has been little time with the launch coming up.  It doesn’t help that there aren’t many other women around space industries.  But after this launch, there should be some down time and you will get a good promotion.  And you will get to spend more time with your husband.  Of course, during the design, you had to make some critical decisions, which you have noted down here in your notebook...&lt;br&gt;&lt;br&gt;
 &lt;center&gt;[[Next-&gt;Notebook]]&lt;/center&gt;</tw-passagedata>
-<tw-passagedata pid="2" name="Notebook" tags="script stylesheet" position="444,204">“Where’s my notebook” you think to yourself.  You kept all your decisions recorded in them regarding your design choices.  Was it misplaced?  You search your office and are unable to find it.  “Well, I can just make a new one.  I’m pretty sure I remember most of them. Pick a new cover for your notebook:
+<tw-passagedata pid="2" name="Notebook" tags="script stylesheet" position="444,204">
+“Where’s my notebook” you think to yourself.  You kept all your decisions recorded in them regarding your design choices.  Was it misplaced?  You search your office and are unable to find it.  “Well, I can just make a new one.  I’m pretty sure I remember most of them. Pick a new cover for your notebook:
 
 &lt;center&gt;
 [[Dog-&gt;Dog]] &lt;br&gt;&lt;br&gt;
@@ -97,15 +104,15 @@ $(window).on('showpassage:after', function (e, data)
 </tw-passagedata>
 <tw-passagedata pid="3" name="Dog" tags="script stylesheet" position="269,349">&lt;center&gt;This will be the cover for your notebook:&lt;br&gt;
 &lt;img src=&quot;http://orig09.deviantart.net/f8ef/f/2014/036/4/7/boxer_dog_8_bit_by_abennett88-d75aals.png&quot;&gt;
-&lt;% changeCover(&quot;Dog&quot;) %&gt;
+&lt;% changeCover(&quot;Dog&quot;) %&gt;&lt;br&gt;
 [[Next-&gt;Safety]]        [[Back-&gt;Notebook]]&lt;/center&gt;</tw-passagedata>
 <tw-passagedata pid="4" name="Husband" tags="script stylesheet" position="453,344">&lt;center&gt;This will be the cover of your notebook:&lt;br&gt;
 &lt;img src=&#39;http://paul-blewitt.com/wp-content/uploads/2013/09/Paul-8-bit.png&#39; width=&quot;400&quot;&gt;
-&lt;% changeCover(&quot;Husband&quot;) %&gt;
+&lt;% changeCover(&quot;Husband&quot;) %&gt;&lt;br&gt;
 [[Next-&gt;Safety]]        [[Back-&gt;Notebook]] &lt;/center&gt;</tw-passagedata>
 <tw-passagedata pid="5" name="Parents" tags="script stylesheet" position="613,347">&lt;center&gt;This will be the cover of your notebook:&lt;br&gt;
 &lt;img src=&#39;http://t00.deviantart.net/KZ5fB658IRMNKd8lL6H8kBusdQM=/fit-in/150x150/filters:no_upscale():origin()/pre08/b2b9/th/pre/f/2015/328/3/f/retro_8_bit_style_pixel_sprite_couple_by_emmadreamstar-d9huwsc.png&#39; width=&#39;400&#39;&gt;
-&lt;% changeCover(&quot;Parents&quot;) %&gt;
+&lt;% changeCover(&quot;Parents&quot;) %&gt;&lt;br&gt;
 [[Next-&gt;Safety]] [[Back-&gt;Notebook]] &lt;/center&gt;</tw-passagedata>
 <tw-passagedata pid="6" name="Safety" tags="script stylesheet" position="457,499">When making the rocket, I chose a level of safety required based on the budget.  Let’s see….it was:&lt;br&gt;&lt;br&gt;
 &lt;center&gt;
@@ -130,10 +137,12 @@ You have decided to set the quality at 99.7%.&lt;br&gt;&lt;br&gt;
 &lt;center&gt;[[Next-&gt;Crew]] &lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;input type=&#39;button&#39; value=&#39;Show Notebook&#39; id=&#39;show&#39; onclick=&quot;showNote()&quot; class=&quot;btn&quot; /&gt;
 &lt;/center&gt;</tw-passagedata>
-<tw-passagedata pid="10" name="Note" tags="script stylesheet" position="728,148">Your cover is: &lt;p style=&quot;color:red&quot;&gt;&lt;%= cover %&gt;&lt;/p&gt;&lt;br&gt;
+<tw-passagedata pid="10" name="Note" tags="script stylesheet" position="728,148">&lt;center&gt;
+Your cover is: &lt;p style=&quot;color:red&quot;&gt;&lt;%= cover %&gt;&lt;/p&gt;&lt;br&gt;
 Your quality of rocket is: &lt;p style=&quot;color:red&quot;&gt;&lt;%= quality %&gt;&lt;/p&gt;&lt;br&gt;
 Your crew numbers are: &lt;p style=&quot;color:red&quot;&gt;&lt;%= crew %&gt;&lt;/p&gt;&lt;br&gt;
 &lt;input type=&#39;button&#39; value=&#39;Hide Notebook&#39; id=&#39;hide&#39; onclick=&quot;hideNote()&quot; class=&quot;btn&quot; /&gt;
+&lt;/center&gt;
 </tw-passagedata>
 <tw-passagedata pid="11" name="Crew" tags="script stylesheet" position="452,862">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js&quot;&gt;&lt;/script&gt;
 &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css&quot;&gt;
@@ -147,19 +156,9 @@ After establishing your quality of rocket, it&#39;s time to pick the crew for th
 &lt;center&gt;
 &lt;input type=&#39;button&#39; value=&#39;Submit&#39; id=&#39;submit&#39; onclick=&quot;check()&quot; class=&quot;btn&quot; /&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-[[Finish-&gt;Boss]]&lt;/center&gt;</tw-passagedata>
-<tw-passagedata pid="12" name="Boss" tags="script stylesheet" position="451,1016">Now that you have picked your crew, it&#39;s 5 pm and time for you to go home. You usually stay at the office for extra hours but today is the anniversary with your husband so you&#39;re leaving early. You have scheduled a romantic dinner at a fancy restaurant. &lt;br&gt;
-
-Your boss, Simon, is down the hallway. He always try to appear more successful than he really is, he is rash on making decisions, and he always blame his subordinates for his own mistake. So basically he&#39;s a con artist.&lt;br&gt;
-&lt;center&gt;
-&lt;input type=&#39;button&#39; value=&#39;Show Notebook&#39; id=&#39;show&#39; onclick=&quot;showNote()&quot; class=&quot;btn&quot; /&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-[[Greet Simon-&gt;bossEncounterp]]&lt;br&gt;
-[[Avoid Sinon-&gt;bossEncountern]]
-&lt;/center&gt;
-</tw-passagedata>
-<tw-passagedata pid="13" name="Start" tags="" position="601,29">
+[[Next-&gt;Phone Call]] 
+&lt;/center&gt;</tw-passagedata>
+<tw-passagedata pid="12" name="Start" tags="" position="601,29">
 &lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
@@ -172,19 +171,87 @@ Your boss, Simon, is down the hallway. He always try to appear more successful t
 &lt;center&gt;[[ENTER-&gt;Introduction]] 
 &lt;/center&gt;
 </tw-passagedata>
-<tw-passagedata pid="14" name="bossEncounterp" tags="" position="329,1166">&lt;p style=&quot;color:red&quot;&gt;&quot;Hey Simon what&#39;s up!&quot; You tried to sound happy.&lt;/p&gt;&lt;br&gt;
-&lt;p style=&quot;color:green&quot;&gt;&quot;Hi Savannah! I just wanted to let you know that we need someone to stay tonight to calculate the return trajectory.&lt;/p&gt;
-[[Next-&gt;Calculate]]</tw-passagedata>
-<tw-passagedata pid="15" name="bossEncountern" tags="" position="601,1166">You decided to avoid Simon. However, Simon saw you were heading for the elevator and called your name.&lt;br&gt;&lt;br&gt;
-&lt;p style=&quot;color:green&quot;&gt;&quot;Savannah!&quot;&lt;/p&gt;&lt;br&gt;
-&lt;p style=&quot;color:red&quot;&gt;&quot;Oh no...&quot; you thought, but you said &quot;Hey Simon what&#39;s up?&quot;.&lt;/p&gt; &lt;br&gt;
-&lt;p style=&quot;color:green&quot;&gt;&quot;Can you stay tonight to finish the calculations for the return trajectory?&quot;&lt;/p&gt;&lt;br&gt;
-[[Next-&gt;Calculate]] </tw-passagedata>
-<tw-passagedata pid="16" name="Calculate" tags="" position="455,1310">Just in case you forgot, you&#39;re heading out to a romantic dinner with your husband for your anniversary.&lt;br&gt;
-[[Decline the request and go to the dinner-&gt;Decline]]&lt;br&gt;
-[[Stay at the company and bail on your husband-&gt;Stay]]</tw-passagedata>
-<tw-passagedata pid="17" name="Decline" tags="" position="605,1469">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="18" name="Stay" tags="" position="328,1461">Double-click this passage to edit it.</tw-passagedata>
+<tw-passagedata pid="13" name="Phone Call" tags="" position="456,997">It is 4pm, nearing the end of a Thursday work day.&lt;br&gt;&lt;br&gt;
+*Ring Ring*&lt;br&gt;&lt;br&gt;
+You look at your phone.  It&#39;s you answer it.&lt;br&gt;&lt;br&gt;
+
+&quot;Hello dear&quot;, you hear your husband say.  &quot;I am looking forward to our anniversary dinner tonight.  I have missed not seeing you much recently because of work.  I&#39;m glad we finally get to spend some time togehter.&quot;&lt;br&gt;&lt;br&gt;
+&lt;center&gt;
+[[Next -&gt;Leaving Office]] 
+&lt;/center&gt;</tw-passagedata>
+<tw-passagedata pid="14" name="Leaving Office" tags="" position="451,1137">You are leaving the office.  &lt;br&gt;
+&quot;Savannah, I&#39;m glad I caught you.&quot; &lt;br&gt;
+You turn around and see your boss. &lt;br&gt;
+&quot;I&#39;ve thought of a great idea.  If we move up the launch a bit, we can look even better to customers.  I want to know if it&#39;s possible by tomorrow, so I will need you to work on the trajectory calculatios tonight.&quot; &lt;br&gt;
+&quot;But sir, I have my anniversary dinner tonight.  We talked about this earlier.&quot; &lt;br&gt;
+&quot;I know Savannah, but this would be huge.  Can&#39;t you have your anniversary dinner a different night.  All your husband seems to do is sit around waiting for you anyhow.&quot; &lt;br&gt; &lt;br&gt;
+[[You turn arround furious.  &quot;Do you really think this job is worth more to me than my husband?  I can go out and find a new job anytime.&quot; -&gt;Furious Response]] &lt;br&gt;&lt;br&gt;
+[[&quot;Sir, I am going to dinner with my husband.  I talked to you about this, and it is not going to change now.&quot; -&gt;Pass off Calculations]] &lt;br&gt;
+[[&quot;Are you serious? I talked to you about this earlier, and now you are going to have me cancle and work even more? -&gt;Decide to Stay]] 
+</tw-passagedata>
+<tw-passagedata pid="15" name="Furious Response" tags="" position="705,1054">&quot;Well, you are my employee and I expect you to work.  We don&#39;t need people who drop the ball when work needs to be done.  Either you can get the calculations to me by tomorrow or your replacement can do it.  People all over the world want to work for InterSpace.&quot; &lt;br&gt;
+
+[[&quot;Then I quit&quot; -&gt; Quit.]]&lt;br&gt;&lt;br&gt;
+[[&quot;Fine, but don&#39;t forget what I have done for this company.&quot; -&gt;Stay and Work]] </tw-passagedata>
+<tw-passagedata pid="16" name="Pass off Calculations" tags="" position="116,1303">&quot;Well, I expect the calculations on my desk tomorrow by noon.  Do what you have to to get them there.&quot; &lt;br&gt;
+He turns and walks away. &lt;br&gt;&lt;br&gt;
+You know most of the other engineers are busy, but Billy the intern has been looking to help with work. &lt;br&gt;
+&quot;Hey Billy, I have some work for you.  I need you to do some trajectory calculations for the rocket.&quot;&lt;br&gt;
+&quot;I will give it a shot, but I haven&#39;t done them before,&quot; he replies.&lt;br&gt;
+&quot;Don&#39;t worry, just base them off my past calculations.  Here they are.  Put them on Simone&#39;s desk when you are done.  He will look over them tomorrow.&quot;&lt;br&gt;&lt;br&gt;
+Billy takes the papers, and you head to dinner.
+[[Next -&gt;Go to Dinner]] </tw-passagedata>
+<tw-passagedata pid="17" name="Decide to Stay" tags="" position="386,1303">&quot;Yes, I need you here.  You will have plenty of time to go to dinner once the mission is done.  I look forward to seeing your trajectory calculations tomorrow.&quot;  &lt;br&gt;
+Before you can respond, he turns and leaves. &lt;br&gt;
+
+You know the calculations need to be done, but you don&#39;t want to ditch your husband.&lt;br&gt;
+[[You wonder if you can get someone else to do the calculations. -&gt;Pass off Calculations]] &lt;br&gt;
+
+[[You know that you would be best at doing the calculations, and your team needs you.  You decide to stay at work -&gt;Stay and Work]] 
+
+</tw-passagedata>
+<tw-passagedata pid="18" name=" Quit." tags="" position="977,1042">You go back to your office to grab your belongings.  You hear your boss shouting, but choose not to listen. &lt;br&gt; &lt;br&gt;
+You walk to your car and leave.</tw-passagedata>
+<tw-passagedata pid="19" name="Stay and Work" tags="" position="622,1304">[[You decide to call your husband and tell him what happened and that you won&#39;t be at dinner -&gt; Call Husband]]
+
+[[You start working immediately.  You will call your husband in a little bit, when you have had time to figure out how you will explain not going to dinner. -&gt; Start Working]]
+</tw-passagedata>
+<tw-passagedata pid="20" name="Go to Dinner" tags="" position="117,1517">
+
+As soon as you say this, you hear your phone vibrate &lt;br&gt;
+[[You pick up the phone -&gt; Pick up Call]] &lt;br&gt;
+[[You ignore the call -&gt; Ignore Call]]</tw-passagedata>
+<tw-passagedata pid="21" name=" Call Husband" tags="" position="793,1479">&quot;Hello honey.  I am calling because I won&#39;t be able to make it to dinner tonight.  Stuff came up and I have to...&quot;
+&quot;Stop.  I don&#39;t need you to explain, because either way you are putting your work over me.  I know work is important to you, but aren&#39;t I as well?  We can talk about this more when you are home.&quot; &lt;br&gt;
+*Click* &lt;br&gt;
+He hung up.  You feel terrible, but there is nothing you can do now.  You will have to make it up to him later.
+
+[[next -&gt;Ignore]] </tw-passagedata>
+<tw-passagedata pid="22" name=" Start Working" tags="" position="556,1479">You begin calculating the space trajectory of the return flight.  It is fairly easy, but it is tedious and easy to make a mistake.  But you don&#39;t make mistakes... &lt;br&gt;
+[[next -&gt; It is late]]</tw-passagedata>
+<tw-passagedata pid="23" name=" Pick up Call" tags="" position="40,1671">&quot;Hello Savanah, it&#39;s Billy.  I was having a little bit of trouble with the calculations.  How do I account for the gravity changes from the moon and earth on the re-entry?&quot;&lt;br&gt;
+As he is talking, you see disappointment in your husband&#39;s face.&lt;br&gt;
+&quot;I am busy now.  Look it up in the Orbital Physics reference book in chaper 4. Goodbye.&quot; &lt;br&gt;
+You look at your husband, and while he seems unhappy you answered the phone, he doesn&#39;t seem to mad.  You continue your dinner happily.
+[[next -&gt; Night]]
+</tw-passagedata>
+<tw-passagedata pid="24" name=" Ignore Call" tags="" position="293,1538">While you are slightly bothered by not picking up the call, you are enjoying dinner with your husband and don&#39;t want to ruin the moment.  You continue to enjoy your dinner until late.
+[[next -&gt; Night]]</tw-passagedata>
+<tw-passagedata pid="25" name="Ignore" tags="" position="763,1681">You finished the calculations.  It is about 2 am now, so you decide to just sleep at the office.</tw-passagedata>
+<tw-passagedata pid="26" name=" It is late" tags="" position="552,1656">*Ring Ring*
+You are working, and get interupted by a phone call.
+
+[[Ignore call. -&gt;Ignore]]
+[[Pick up call. -&gt;Pickup]]</tw-passagedata>
+<tw-passagedata pid="27" name=" Night" tags="" position="235,1729">You and your husband had a great night and it is time to get some sleep for the next day.</tw-passagedata>
+<tw-passagedata pid="28" name="Pickup" tags="" position="575,1809">&quot;Hello dear,&quot; you hear your husband say.  You glance at the time and to your dismay you realize it is 7:30. &lt;br&gt;
+&quot;Are you on you way to or anniversary dinner?&quot; &lt;br&gt;
+&quot;Oh god, honey.  I meant to call you.  I have to do some trajectory calculations for tomorrow and won&#39;t be able to come.  You see the...&quot; &lt;br&gt;
+&quot;Stop.  Just stop.  You can explain all you want, but either way you are putting your work over me.  I know work is important to you, but aren&#39;t I as well?  We can talk about this more when you are home, face to face, ... if you ever actually come home.&quot; &lt;br&gt;
+*Click* &lt;br&gt;
+He hung up.  You feel terrible about what happened, but there is nothing you can do now.  You will have to make it up to him later.
+
+[[next -&gt;Ignore]] </tw-passagedata>
 </tw-storydata>
 
 
