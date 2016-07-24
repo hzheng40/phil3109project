@@ -1,0 +1,88 @@
+<tw-storydata name="Phil 3109 Act IV" startnode="1" creator="Twine" creator-version="2.0.11" ifid="85480A15-E3D4-446E-A52A-4277FCA180CE" format="Harlowe" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+</script><tw-passagedata pid="1" name="Storm approaching" tags="" position="710,299">Asteroid (78)-Dorado sits in the crossheirs of an approaching radiation storm. The only chance of escape is your space craft which will likely be compromised if it remains in the afflicted region. You&#39;re pilot instructs you that your man on the surface has been instructed to travel down into the mine where he will be safe from radiation.
+
+His jeopardy is only temporarily delayed, however, as his ship is his only chance of returning to Earth.
+
+A decision must be made. Shall the ship attempt to endure the storm or will your man be left on the planet alone.
+
+[[order launch]]
+
+[[order ship to remain on asteroid]]
+
+[[consult pilot]]
+
+[[consult notebook]]</tw-passagedata>
+<tw-passagedata pid="2" name="order launch" tags="" position="528,594">The crew gives their best regards to the man left behind before preparing for launch. As the ship departs from the asteroid, headquarters begins running calculations for a potential rescue mission.
+
+(if the ship contains 700 tons of platinum)
+
+Your analysts confirm what everybody has already suspected. The ship does not have the fuel to return to the asteroid for an additional launch.
+
+[[attempt rescue mission-&gt;rescue failure]]
+[[abandon rescue mission-&gt;towards earth w/o rescue attempt]]
+
+(if the ship contains 200 tons with 90% or greater ship quality)
+
+Your analysts are deeply concerned about the risks of the return journey. The extra weight of the platinum will make the space craft very difficult to maneuver with a possibility of running out of fuel.
+
+[[attempt rescue mission-&gt;rescue success]]
+[[abandon rescue mission-&gt;towards earth w/o rescue attempt]]
+
+(if the ship contains 200 tons with less than 90% ship quality)
+
+Your analysts are deeply concerned about the risks of the return journey. The extra weight of the platinum will make the space craft very difficult to maneuver with a possibility of running out of fuel.
+
+[[attempt rescue mission-&gt;rescue failure]]
+[[abandon rescue mission-&gt;towards earth w/o rescue attempt]]</tw-passagedata>
+<tw-passagedata pid="3" name="order ship to remain on asteroid" tags="" position="942,571">(if the crew has sent the man on the mining inspection mission against your order)
+
+The crew and the personell at headquarters wait both anxiously and solemnly as the storm overthrows the asteroid. Communications are lost as the radiation washes over (78)-Dorado in an impermeable haze. Waiting in silence is your only option.
+
+(if the crew sent the man on the mining inspection mission on account of your order (700 or 200 tons of platinum on board))
+
+The crew and the personell at headquarters are immensely uneasy. In addition to their deep concern for the man left on the asteroid, they have begun to question your competency. Presently, everyone waits in silence for the storm to pass. Communications have been temporarily lost on account of the radiation.
+
+(if the crew sent the man on the mining inspection mission on account of your order (70 tons of platinum on board))
+
+The crew is furious with your decisions. You can not help but overhear serious discussion by your superiors at headquarters of you being immediately deposed of your position as head of operations for this mission. Presently, everyone waits in silence for the storm to pass. Communications have been temporarily lost on account of the radiation.
+
+[[space craft survives storm]]
+
+[[space craft is rendered unlaunchable]]</tw-passagedata>
+<tw-passagedata pid="4" name="consult pilot" tags="" position="1196,444">(Variables needed, if the ship has 700 tons of platinum, the pilot will tell you that there is no chance of a return journey to rescue the man left behind. If it has 200 tons he will inform you that the rescue will mission be risky. If the ship has 70 tons, he will recommend a rescue journey.)
+
+[[consult notebook]] 
+[[order ship to remain on asteroid]] 
+[[order launch]] </tw-passagedata>
+<tw-passagedata pid="5" name="consult notebook" tags="" position="1032,285">(notebook will have notes on the quality of the ship. The quality of the ship will determine whether the rocket can endure the radiation storm and still launch afterwards)
+
+[[consult pilot]]
+
+[[order ship to remain on asteroid]] 
+
+[[order launch]] </tw-passagedata>
+<tw-passagedata pid="6" name="space craft survives storm" tags="" position="948,753">As communications are regained, you overhear the celebration of the crew. The ship has remained intact and operable. Your man on the asteroid is on his way back towards the craft right this moment. It won&#39;t be long until the entire crew is on their way back towards Earth.
+
+[[towards earth with successful rescue]]</tw-passagedata>
+<tw-passagedata pid="7" name="space craft is rendered unlaunchable" tags="" position="1100,875">As communications are regained, you are informed by the pilot that the controls to the ship are unresponsive. The mechanic verifies that the launching eqiupment is heavily damaged.
+
+The families of the astronauts are contacted and brought into headquarters so that goodbyes may be said.
+
+The crew intends to make a desperate attempt to escape. However, due to the severity of the damage, nobody expects the space craft to even leave the surface.
+
+(if you made the order to inspect the mining equipment)
+Your boss fires you and you leave the building in disgrace.</tw-passagedata>
+<tw-passagedata pid="8" name="rescue failure" tags="" position="484,855">The crew lands on the asteroid. As the man on the surface travels back to the craft, the crew inspects the viability of the return launch.
+
+It quickly becomes evident that the craft does not contain adequate fuel for the return journey. The families of the astronauts are contacted and brought into headquarters so that goodbyes may be said.
+
+The crew intends to make a desperate effort to return back towards earth. They will almost certainly exhaust their fuel supply and float off into the depths of space.</tw-passagedata>
+<tw-passagedata pid="9" name="towards earth w/o rescue attempt" tags="" position="672,865">The crew solemnly begin their voyage back towards Earth. The man on the surface will discover his fate when he returns to the launch site to find himself entirely alone.
+
+Personell at headquarters is greatly distraught at the loss of an astronaut, but the platinum in tow has not been forgotten.</tw-passagedata>
+<tw-passagedata pid="10" name="rescue success" tags="" position="801,703">Double-click this passage to edit it.
+
+[[towards earth with successful rescue]]</tw-passagedata>
+<tw-passagedata pid="11" name="towards earth with successful rescue" tags="" position="823.0001,877">The spacecraft makes a successful launch and the crew happily begins their voyage back towards Earth. Personell at headquarters are greatly relieved that the crew is safe, but the amount of platinum in tow has not been forgotten.</tw-passagedata>
+</tw-storydata>
