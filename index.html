@@ -45,6 +45,7 @@ a
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.click = new Audio("http://soundbible.com/grab.php?id=1682&type=wav");
 window.cover = "You have not picked a cover yet";
 window.quality = "You have not picked a rocket quality yet";
@@ -54,6 +55,7 @@ window.previous = "";
 window.payload = 0;
 window.order = "";
 window.action = "Equiqment check";
+window.husband = '';
 
 window.showPassage = function showPassage(name) {
 	//window.click.play();
@@ -126,6 +128,7 @@ $(window).on('showpassage:after', function (e, data)
 
 
 
+
 </script><tw-passagedata pid="1" name="Introduction" tags="script stylesheet" position="441,70">Hi Savannah, you are an employee for InterSpace.  You recently transferred to Texas, where you are expecting promotion based on you successful rocket design.  You have been assisting in testing for the past few weeks, and it will be launched in the next few days.  You have been trying to make new friends at work, but there has been little time with the launch coming up.  It doesn’t help that there aren’t many other women around space industries.  But after this launch, there should be some down time and you will get a good promotion.  And you will get to spend more time with your husband.  Of course, during the design, you had to make some critical decisions, which you have noted down here in your notebook...&lt;br&gt;&lt;br&gt;
 &lt;center&gt;[[Next-&gt;Notebook]]&lt;/center&gt;</tw-passagedata>
 <tw-passagedata pid="2" name="Notebook" tags="script stylesheet" position="444,204">
@@ -174,13 +177,14 @@ You have decided to set the quality at 99.7%.&lt;br&gt;&lt;br&gt;
 &lt;center&gt;[[Next-&gt;Crew]] &lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;input type=&#39;button&#39; value=&#39;Show Notebook&#39; id=&#39;show&#39; onclick=&quot;showNote()&quot; class=&quot;btn&quot; /&gt;
 &lt;/center&gt;</tw-passagedata>
-<tw-passagedata pid="10" name="Note" tags="script stylesheet" position="728,148">&lt;center&gt;
+<tw-passagedata pid="10" name="Note" tags="script stylesheet" position="285,75">&lt;center&gt;
 &lt;img src=&lt;%= cover %&gt; width=&#39;400&#39;&gt;&lt;br&gt;&lt;br&gt;
 Your quality of rocket is: &lt;p style=&quot;color:red&quot;&gt;&lt;%= quality %&gt;&lt;/p&gt;&lt;br&gt;
 Your crew numbers are: &lt;p style=&quot;color:red&quot;&gt;&lt;%= crew %&gt;&lt;/p&gt;&lt;br&gt;
 Your payload is: &lt;p style=&#39;color:red&#39;&gt;&lt;%= payload %&gt;&lt;/p&gt;&lt;br&gt;
 Your order is: &lt;p style=&#39;color:red&#39;&gt;&lt;%= order %&gt;&lt;/p&gt;&lt;br&gt;
 The crew&#39;s action is &lt;p style=&#39;color:red&#39;&gt;&lt;%= action %&gt;&lt;/p&gt;&lt;br&gt;
+Your husband is: &lt;p style=&#39;color:red&#39;&gt;&lt;%= husband %&gt;&lt;/p&gt;&lt;br&gt;
 &lt;input type=&#39;button&#39; value=&#39;Hide Notebook&#39; id=&#39;hide&#39; onclick=&quot;hideNote()&quot; class=&quot;btn&quot; /&gt;
 &lt;/center&gt;
 </tw-passagedata>
@@ -196,7 +200,7 @@ After establishing your quality of rocket, it&#39;s time to pick the crew for th
 &lt;center&gt;
 &lt;input type=&#39;button&#39; value=&#39;Submit&#39; id=&#39;submit&#39; onclick=&quot;check()&quot; class=&quot;btn&quot; /&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-[[Next-&gt;Phone Call]] 
+[[Next-&gt;Phone Call]] &lt;br&gt;&lt;br&gt;
 &lt;/center&gt;</tw-passagedata>
 <tw-passagedata pid="12" name="Start" tags="" position="601,29">
 &lt;br&gt;
@@ -229,7 +233,8 @@ You turn around and see your boss. &lt;br&gt;
 &lt;center&gt;
 [[You turn arround furious.  &quot;Do you really think this job is worth more to me than my husband?  I can go out and find a new job anytime.&quot; -&gt;Furious Response]] &lt;br&gt;&lt;br&gt;
 [[&quot;Sir, I am going to dinner with my husband.  I talked to you about this, and it is not going to change now.&quot; -&gt;Pass off Calculations]] &lt;br&gt;&lt;br&gt;
-[[&quot;Are you serious? I talked to you about this earlier, and now you are going to have me cancle and work even more? -&gt;Decide to Stay]] 
+[[&quot;Are you serious? I talked to you about this earlier, and now you are going to have me cancle and work even more? -&gt;Decide to Stay]] &lt;br&gt;&lt;br&gt;
+&lt;input type=&#39;button&#39; value=&#39;Show Notebook&#39; id=&#39;show&#39; onclick=&quot;showNote()&quot; class=&quot;btn&quot; /&gt;
 &lt;/center&gt;
 </tw-passagedata>
 <tw-passagedata pid="15" name="Furious Response" tags="" position="705,1054">&lt;font color=&#39;green&#39;&gt;&quot;Well, you are my employee and I expect you to work.  We don&#39;t need people who drop the ball when work needs to be done.  Either you can get the calculations to me by tomorrow or your replacement can do it.  People all over the world want to work for InterSpace.&quot; &lt;/font&gt;&lt;br&gt;&lt;br&gt;
@@ -270,9 +275,7 @@ You walk to your car and leave.
 [[You start working immediately.  You will call your husband in a little bit, when you have had time to figure out how you will explain not going to dinner. -&gt; Start Working]]
 &lt;/center&gt;
 </tw-passagedata>
-<tw-passagedata pid="20" name="Go to Dinner" tags="" position="192,1500">
-
-As soon as you say this, you hear your phone vibrate &lt;br&gt;&lt;br&gt;
+<tw-passagedata pid="20" name="Go to Dinner" tags="" position="192,1500">As soon as you say this, you hear your phone vibrate &lt;br&gt;&lt;br&gt;
 &lt;center&gt;
 [[You pick up the phone -&gt; Pick up Call]] &lt;br&gt;&lt;br&gt;
 [[You ignore the call -&gt; Ignore Call]]
@@ -302,22 +305,28 @@ You look at your husband, and while he seems unhappy you answered the phone, he 
 &lt;center&gt;
 [[Next -&gt; Night]]
 &lt;/center&gt;</tw-passagedata>
-<tw-passagedata pid="25" name="Ignore" tags="" position="842,1695">You finished the calculations.  It is about 2 am now, so you decide to just sleep at the office.&lt;br&gt;&lt;br&gt;
+<tw-passagedata pid="25" name="Ignore" tags="" position="725,1703">&lt;% window.husband = &#39;angry&#39; %&gt;
+You finished the calculations.  It is about 2 am now, so you decide to just sleep at the office.&lt;br&gt;&lt;br&gt;
 &lt;center&gt;
-[[Next-&gt;transition]]
-&lt;/center&gt;</tw-passagedata>
-<tw-passagedata pid="26" name=" It is late" tags="" position="555,1656">*Ring Ring*&lt;br&gt;&lt;br&gt;
+[[Next-&gt;transition]]&lt;br&gt;&lt;br&gt;
+&lt;input type=&#39;button&#39; value=&#39;Show Notebook&#39; id=&#39;show&#39; onclick=&quot;showNote()&quot; class=&quot;btn&quot; /&gt;
+&lt;/center&gt;
+</tw-passagedata>
+<tw-passagedata pid="26" name=" It is late" tags="" position="452,1637">*Ring Ring*&lt;br&gt;&lt;br&gt;
 You are working, and get interupted by a phone call.
 &lt;br&gt;&lt;br&gt;
 &lt;center&gt;
 [[Ignore call. -&gt;Ignore]]&lt;br&gt;&lt;br&gt;
 [[Pick up call. -&gt;Pickup]]
 &lt;/center&gt;</tw-passagedata>
-<tw-passagedata pid="27" name=" Night" tags="" position="227,1751">You and your husband had a great night and it is time to get some sleep for the next day.
+<tw-passagedata pid="27" name=" Night" tags="" position="227,1751">&lt;% window.husband = &#39;happy&#39; %&gt;
+You and your husband had a great night and it is time to get some sleep for the next day.
 &lt;br&gt;&lt;br&gt;&lt;center&gt;
-[[Next-&gt;transition]] 
-&lt;/center&gt;</tw-passagedata>
-<tw-passagedata pid="28" name="Pickup" tags="" position="581,1781">&lt;font color=&#39;orange&#39;&gt;&quot;Hello dear,&quot; &lt;/font&gt;you hear your husband say.  You glance at the time and to your dismay you realize it is 7:30. &lt;br&gt;
+[[Next-&gt;transition]] &lt;br&gt;&lt;br&gt;
+&lt;input type=&#39;button&#39; value=&#39;Show Notebook&#39; id=&#39;show&#39; onclick=&quot;showNote()&quot; class=&quot;btn&quot; /&gt;
+&lt;/center&gt;
+</tw-passagedata>
+<tw-passagedata pid="28" name="Pickup" tags="" position="482,1768">&lt;font color=&#39;orange&#39;&gt;&quot;Hello dear,&quot; &lt;/font&gt;you hear your husband say.  You glance at the time and to your dismay you realize it is 7:30. &lt;br&gt;
 &lt;font color=&#39;orange&#39;&gt;&quot;Are you on you way to or anniversary dinner?&quot; &lt;/font&gt;&lt;br&gt;
 &lt;font color=&#39;red&#39;&gt;&quot;Oh god, honey.  I meant to call you.  I have to do some trajectory calculations for tomorrow and won&#39;t be able to come.  You see the...&quot;&lt;/font&gt; &lt;br&gt;
 &lt;font color=&#39;orange&#39;&gt;&quot;Stop.  Just stop.  You can explain all you want, but either way you are putting your work over me.  I know work is important to you, but aren&#39;t I as well?  We can talk about this more when you are home, face to face, ... if you ever actually come home.&quot; &lt;/font&gt;&lt;br&gt;&lt;br&gt;
@@ -337,7 +346,8 @@ He hung up.  You feel terrible about what happened, but there is nothing you can
 &lt;center&gt;
 [[Mine at this Location-&gt;mine at this location]]
 &lt;br&gt;&lt;br&gt;
-[[Continue Search-&gt;Mine Prospect #2]]
+[[Continue Search-&gt;Mine Prospect #2]]&lt;br&gt;&lt;br&gt;
+&lt;input type=&#39;button&#39; value=&#39;Show Notebook&#39; id=&#39;show&#39; onclick=&quot;showNote()&quot; class=&quot;btn&quot; /&gt;
 &lt;/center&gt;
 </tw-passagedata>
 <tw-passagedata pid="31" name="mine at this location" tags="" position="432,2488">The mining is arduous and the land is laden with unusable sediment, but, slowly and surely, platinum is harvested. 
@@ -351,7 +361,8 @@ He hung up.  You feel terrible about what happened, but there is nothing you can
 &lt;center&gt;
 [[Continue harvesting Platinum-&gt;continue harvesting platinum]]&lt;br&gt;&lt;br&gt;
 
-[[Order the crew to cease mining operations-&gt;order the crew to cease mining operations]]
+[[Order the crew to cease mining operations-&gt;order the crew to cease mining operations]]&lt;br&gt;&lt;br&gt;
+&lt;input type=&#39;button&#39; value=&#39;Show Notebook&#39; id=&#39;show&#39; onclick=&quot;showNote()&quot; class=&quot;btn&quot; /&gt;
 &lt;/center&gt;</tw-passagedata>
 <tw-passagedata pid="33" name="2 days before launch date" tags="" position="367,2648">As the launch date approaches, the crew is frustrated by the lack of success. They unanimously suggest to you that one of them ought to go back to the mining site to make a last round of inspections on the equipment. The purpose of the inspection would be for the benefit of a follow up mission in the case that we one day return for all the platinum which they believe they are leaving behind. Because the time for launch is less than 24 hours a day, the entire crew would ideally be on board the ship preparing for the return voyage.&lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;center&gt;
@@ -386,7 +397,8 @@ Fortunately you have all men on board the craft and an immediate launch will lik
 &lt;center&gt;
 [[Order the entire crew to remain on board the space craft-&gt;order the entire crew to remain on board the space craft]]
 &lt;br&gt;&lt;br&gt;
-[[Order inspection of mining equipment-&gt;equipment check 1]]
+[[Order inspection of mining equipment-&gt;equipment check 1]]&lt;br&gt;&lt;br&gt;
+&lt;input type=&#39;button&#39; value=&#39;Show Notebook&#39; id=&#39;show&#39; onclick=&quot;showNote()&quot; class=&quot;btn&quot; /&gt;
 &lt;/center&gt;</tw-passagedata>
 <tw-passagedata pid="39" name="gameover" tags="" position="988,1050">&lt;center&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
@@ -417,11 +429,11 @@ His jeopardy is only temporarily delayed, however, as his ship is his only chanc
 A decision must be made. Shall the ship attempt to endure the storm or will your man be left on the planet alone.
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;center&gt;
 
-[[order launch]]
+[[Order Launch-&gt;order launch]]
 &lt;br&gt;&lt;br&gt;
-[[order ship to remain on asteroid]]
+[[Order Stay-&gt;order ship to remain on asteroid]]
 &lt;br&gt;&lt;br&gt;
-[[consult pilot]]
+[[Consult Pilot-&gt;consult pilot]]
 &lt;br&gt;&lt;br&gt;
 &lt;input type=&#39;button&#39; value=&#39;Show Notebook&#39; id=&#39;show&#39; onclick=&quot;showNote()&quot; class=&quot;btn&quot; /&gt;
 &lt;/center&gt;</tw-passagedata>
@@ -430,23 +442,23 @@ A decision must be made. Shall the ship attempt to endure the storm or will your
 &lt;div id=&#39;700&#39;&gt;
 Your analysts confirm what everybody has already suspected. The ship does not have the fuel to return to the asteroid for an additional launch.&lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;center&gt;
-[[attempt rescue mission-&gt;rescue failure]]&lt;br&gt;&lt;br&gt;
-[[abandon rescue mission-&gt;towards earth w/o rescue attempt]]
+[[Attempt rescue mission-&gt;rescue failure]]&lt;br&gt;&lt;br&gt;
+[[Abandon rescue mission-&gt;towards earth w/o rescue attempt]]
 &lt;div&gt;
 
 &lt;div id=&#39;20090&#39;&gt;
 Your analysts are deeply concerned about the risks of the return journey. The extra weight of the platinum will make the space craft very difficult to maneuver with a possibility of running out of fuel.&lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;center&gt;
-[[attempt rescue mission-&gt;rescue success]]&lt;br&gt;&lt;br&gt;
-[[abandon rescue mission-&gt;towards earth w/o rescue attempt]]
+[[Attempt rescue mission-&gt;rescue success]]&lt;br&gt;&lt;br&gt;
+[[Abandon rescue mission-&gt;towards earth w/o rescue attempt]]
 &lt;/center&gt;
 &lt;/div&gt;
 
 &lt;div id=&#39;200less&#39;&gt;
 Your analysts are deeply concerned about the risks of the return journey. The extra weight of the platinum will make the space craft very difficult to maneuver with a possibility of running out of fuel.&lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;center&gt;
-[[attempt rescue mission-&gt;rescue failure]]&lt;br&gt;&lt;br&gt;
-[[abandon rescue mission-&gt;towards earth w/o rescue attempt]]
+[[Attempt rescue mission-&gt;rescue failure]]&lt;br&gt;&lt;br&gt;
+[[Abandon rescue mission-&gt;towards earth w/o rescue attempt]]
 &lt;/center&gt;
 
 &lt;script&gt;
@@ -531,17 +543,20 @@ if (window.payload &lt; 100) {
 It quickly becomes evident that the craft does not contain adequate fuel for the return journey. The families of the astronauts are contacted and brought into headquarters so that goodbyes may be said.&lt;br&gt;
 
 The crew intends to make a desperate effort to return back towards earth. They will almost certainly exhaust their fuel supply and float off into the depths of space.&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt; [[Next-&gt;gameover]] &lt;/center&gt;</tw-passagedata>
+&lt;center&gt; [[Next-&gt;roll]] &lt;/center&gt;</tw-passagedata>
 <tw-passagedata pid="47" name="towards earth w/o rescue attempt" tags="" position="232,3535">The crew solemnly begin their voyage back towards Earth. The man on the surface will discover his fate when he returns to the launch site to find himself entirely alone.&lt;br&gt;
 
 Personell at headquarters is greatly distraught at the loss of an astronaut, but the platinum in tow has not been forgotten.&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt; [[Next-&gt;gameover]] &lt;/center&gt;</tw-passagedata>
+&lt;center&gt; [[Next-&gt;Single Loss]] &lt;/center&gt;</tw-passagedata>
 <tw-passagedata pid="48" name="rescue success" tags="" position="383,3535">Double-click this passage to edit it.
-
-[[towards earth with successful rescue]]</tw-passagedata>
+&lt;center&gt;
+[[Next-&gt;towards earth with successful rescue]]
+&lt;/center&gt;</tw-passagedata>
 <tw-passagedata pid="49" name="space craft survives storm" tags="" position="539,3536">As communications are regained, you overhear the celebration of the crew. The ship has remained intact and operable. Your man on the asteroid is on his way back towards the craft right this moment. It won&#39;t be long until the entire crew is on their way back towards Earth.
-
-[[towards earth with successful rescue]]</tw-passagedata>
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;center&gt;
+[[Next-&gt;towards earth with successful rescue]]
+&lt;/center&gt;</tw-passagedata>
 <tw-passagedata pid="50" name="space craft is rendered unlaunchable" tags="" position="683,3533">As communications are regained, you are informed by the pilot that the controls to the ship are unresponsive. The mechanic verifies that the launching eqiupment is heavily damaged.&lt;br&gt;
 
 The families of the astronauts are contacted and brought into headquarters so that goodbyes may be said.&lt;br&gt;
@@ -553,7 +568,7 @@ The crew intends to make a desperate attempt to escape. However, due to the seve
 Your boss fires you and you leave the building in disgrace.
 &lt;/div&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;center&gt;
-[[Next-&gt;gameover]] 
+[[Next-&gt; Mission Failure]] 
 &lt;/center&gt;
 
 &lt;script&gt;
@@ -563,8 +578,113 @@ if (window.order != &quot;Equipment check&quot;) {
 &lt;/script&gt;
 
 </tw-passagedata>
-<tw-passagedata pid="51" name="towards earth with successful rescue" tags="" position="460,3686">The spacecraft makes a successful launch and the crew happily begins their voyage back towards Earth. Personell at headquarters are greatly relieved that the crew is safe, but the amount of platinum in tow has not been forgotten.
-[[next-&gt;gameover]] </tw-passagedata>
+<tw-passagedata pid="51" name="towards earth with successful rescue" tags="" position="288,3702">The spacecraft makes a successful launch and the crew happily begins their voyage back towards Earth. Personell at headquarters are greatly relieved that the crew is safe, but the amount of platinum in tow has not been forgotten.&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;center&gt;
+[[Next-&gt; Success]] 
+&lt;/center&gt;</tw-passagedata>
+<tw-passagedata pid="52" name="roll" tags="" position="92,3682">&lt;div id=&#39;success&#39;&gt;
+You watch the monitor as the ship begins its launch.  Will it have enough fuel?  The ship is out of the asteroids gravity field, but still needs to realign to go towards Earth.  The alignment is being made....and ship runs out of fuel.  Was it enough?  The ship being off by even the smallest angle will mean it is lost forever.  But for now, you will have to wait and see.&lt;br&gt;
+
+[[next -&gt; Success]] 
+&lt;/div&gt;
+
+
+&lt;div id=&#39;fail&#39;&gt;
+You watch the monitor as the ship begins its launch.  Will it have enough fuel?  The ship is out of the asteroids gravity field, but still needs to realign to go towards Earth.  The alignment is being made....and ship runs out of fuel.  It will not make it back to earth. &lt;br&gt;
+
+The families of the astronauts are contacted and brought into headquarters so that goodbyes may be said.
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;center&gt;
+[[next -&gt; Mission Failure]]
+&lt;/center&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+	var rand = Math.floor(Math.random()*100) + 1;
+	if (rand &gt; 90) {
+		document.getElementById(&#39;fail&#39;).style.display = &#39;none&#39;;
+	} else {
+		document.getElementById(&#39;success&#39;).style.display = &#39;none&#39;;
+	}
+&lt;/script&gt;</tw-passagedata>
+<tw-passagedata pid="53" name=" Success" tags="" position="183,3844">The ship returns to Earth.  The entire office, along with space enthusiasts around the world, are thrilled.  Interspace has become the first company to successfully mine an asteroid. &lt;br&gt;
+
+You are congratulated for your success in your mission by your fellow co-workers.  Even your boss is thrilled, which is a rare sight.
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;center&gt;
+[[Next-&gt;rollsuccess]]&lt;/center&gt;</tw-passagedata>
+<tw-passagedata pid="54" name=" Mission Failure" tags="" position="386,3837">The mission has failed.  The control room is silent.  Everyone knows that Interspace is over, as well as their careers.  
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;center&gt; [[Next-&gt;rollfired]] &lt;/center&gt;
+</tw-passagedata>
+<tw-passagedata pid="55" name="Single Loss" tags="" position="610,3837">The ship returns to Earth.  There is releif throughout the control room, but also sadness for the man left behind. &lt;br&gt;
+
+But the mission was a success, and your boss is happy with the results.  Even with the loss, invenstors are sure to come and Interspace will expand as the worlds first asteroid mining company.
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;center&gt; [[Next-&gt;rollsingle]] &lt;/center&gt;
+</tw-passagedata>
+<tw-passagedata pid="56" name="rollsuccess" tags="" position="174,3987">&lt;div id=&#39;husband&#39;&gt;
+The mission was a success, and you got a nice raise and promotion.  With this promotion, you asked to work less hours.  Now you get to spend time with your husband every afternoon.  You are both very happy.&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;center&gt;[[Next-&gt;gameover]] &lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#39;left&#39;&gt;
+The mission was a success, and you got a nice raise as well as a promotion.  You continue to work long hours, and one day you return home to find your husband missing.  But there is a note.&lt;br&gt;
+Dear Savannah, &lt;br&gt;
+It has become clear to me that you have chosen your work over myself.  I wish you the best in following your goals without me by your side, as this relationship is never going to work.  I have already filled out the paperwork for a divorce, and behind this letter is the paperwork for you to fill out. &lt;br&gt;
+Sincerely, &lt;br&gt;
+Your former husband&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;center&gt;[[Next-&gt;gameover]] &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+if (window.husband = &#39;happy&#39;) {
+	document.getElementById(&#39;left&#39;).style.display = &#39;none&#39;;
+} else {
+	document.getElementById(&#39;husband&#39;).style.display = &#39;none&#39;;
+}
+&lt;/script&gt;</tw-passagedata>
+<tw-passagedata pid="57" name="rollfired" tags="" position="389,3993">&lt;div id=&#39;husband&#39;&gt;
+With the failure of the mission, Interspace went bankrupt.  You lost your job and are looking for a new one.  But currently you are spending lots of time with your husband, and life is still going well.  He also got a job to help out more.  While you are still overcoming depression from the failure of the mission, your husband has been there to cheer you up and make you happy.&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;center&gt; [[Next-&gt;gameover]] &lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#39;left&#39;&gt;
+With the failure of the mission, Interspace went bankrupt.  You lost your job and are looking for a new one.  There is still tension between you and your husband.  While he got a job to help out, he returns from work and usually find you drunk.  He constanly gets on to you about it, but you don&#39;t listen.  One morning, you wake up and find a letter.
+
+Dear Savannah, &lt;br&gt;
+It has become clear to me that you do not value me as a person, let alont a husband.  I wish you the best in following your goals without me by your side, as this relationship is never going to work.  I have already filled out the paperwork for a divorce, and behind this letter is the paperwork for you to fill out. &lt;br&gt;
+Sincerely, &lt;br&gt;
+Your former husband&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;center&gt; [[Next-&gt;gameover]] &lt;/center&gt;
+&lt;/div&gt;
+&lt;script&gt;
+if (window.husband = &#39;happy&#39;) {
+	document.getElementById(&#39;left&#39;).style.display = &#39;none&#39;;
+} else {
+	document.getElementById(&#39;husband&#39;).style.display = &#39;none&#39;;
+}
+&lt;/script&gt;</tw-passagedata>
+<tw-passagedata pid="58" name="rollsingle" tags="" position="610,3987">&lt;div id=&#39;husband&#39;&gt;
+You are glad the mission succeeded, but an astronaut was lost.  This job is taking you away from your husband, and it is not worth working here anymore.  You decide it is time to find a new job and leave Interspace.&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;center&gt;[[Next-&gt;gameover]] &lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#39;left&#39;&gt;
+While you did have one loss, the mission was a success.  If you work a little bit harder, you can succeed in later missions.  You continue to work long hours, and one day you return home to find your husband missing.  But there is a note.&lt;br&gt;
+
+Dear Savannah, &lt;br&gt;
+It has become clear to me that you have chosen your work over myself.  I wish you the best in following your goals without me by your side, as this relationship is never going to work.  I have already filled out the paperwork for a divorce, and behind this letter is the paperwork for you to fill out. &lt;br&gt;
+Sincerely, &lt;br&gt;
+Your former husband&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;center&gt;[[Next-&gt;gameover]]&lt;/center&gt;
+&lt;/div&gt;
+&lt;script&gt;
+if (window.husband = &#39;happy&#39;) {
+	document.getElementById(&#39;left&#39;).style.display = &#39;none&#39;;
+} else {
+	document.getElementById(&#39;husband&#39;).style.display = &#39;none&#39;;
+}
+&lt;/script&gt;</tw-passagedata>
 </tw-storydata>
 
 
