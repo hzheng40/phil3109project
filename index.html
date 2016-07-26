@@ -95,6 +95,7 @@ window.check = function check() {
 				document.getElementById('crew'+j.toString()).style.visibility = 'hidden';
 			}
 		}
+		document.getElementById('next').style.display = 'block';
 }
 
 window.changeCover = function changeCover(string) {
@@ -205,10 +206,19 @@ After establishing your quality of rocket, it&#39;s time to pick the crew for th
 &lt;input type=&#39;checkbox&#39; name=&#39;crew5&#39; id=&#39;crew5&#39;&gt;5. Primary: Mechanical expert, Secondary: Pilot&lt;br&gt;
 &lt;input type=&#39;checkbox&#39; name=&#39;crew6&#39; id=&#39;crew6&#39;&gt;6. Primary: Mechanical expert, Secondary: Medic&lt;br&gt;
 &lt;center&gt;
-&lt;input type=&#39;button&#39; value=&#39;Submit&#39; id=&#39;submit&#39; onclick=&quot;check()&quot; class=&quot;btn&quot; /&gt;
+&lt;input type=&#39;button&#39; value=&#39;Submit&#39; id=&#39;submit&#39; onclick=&quot;check()&quot; class=&quot;btn&quot; /&gt;&lt;/center&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;div id=&#39;next&#39;&gt;
+&lt;center&gt;
 [[Next-&gt;Phone Call]] &lt;br&gt;&lt;br&gt;
-&lt;/center&gt;</tw-passagedata>
+&lt;/center&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+if (window.crew.length == 0) {
+	document.getElementById(&#39;next&#39;).style.display = &#39;none&#39;;
+}
+&lt;/script&gt;</tw-passagedata>
 <tw-passagedata pid="12" name="Start" tags="" position="601,29">
 &lt;br&gt;
 &lt;br&gt;
@@ -454,7 +464,7 @@ Your analysts confirm what everybody has already suspected. The ship does not ha
 &lt;center&gt;
 [[Attempt rescue mission-&gt;rescue failure]]&lt;br&gt;&lt;br&gt;
 [[Abandon rescue mission-&gt;towards earth w/o rescue attempt]]
-&lt;div&gt;
+&lt;/div&gt;
 
 &lt;div id=&#39;20090&#39;&gt;
 Your analysts are deeply concerned about the risks of the return journey. The extra weight of the platinum will make the space craft very difficult to maneuver with a possibility of running out of fuel.&lt;br&gt;&lt;br&gt;&lt;br&gt;
@@ -470,15 +480,16 @@ Your analysts are deeply concerned about the risks of the return journey. The ex
 [[Attempt rescue mission-&gt;rescue failure]]&lt;br&gt;&lt;br&gt;
 [[Abandon rescue mission-&gt;towards earth w/o rescue attempt]]
 &lt;/center&gt;
+&lt;/div&gt;
 
 &lt;script&gt;
 if (window.payload == 700) {
 	document.getElementById(&#39;20090&#39;).style.display = &#39;none&#39;;
 	document.getElementById(&#39;200less&#39;).style.display = &#39;none&#39;;
-} else if (window.paylaod &lt;= 200 &amp;&amp; window.quality &gt;= 90) {
+} else if (window.payload &lt; 700 &amp;&amp; window.quality &gt;= 90) {
 	document.getElementById(&#39;700&#39;).style.display = &#39;none&#39;;
 	document.getElementById(&#39;200less&#39;).style.display = &#39;none&#39;;
-} else if (window.payload &lt;= 200 &amp;&amp; window.quality &lt; 90) {
+} else if (window.payload &lt; 700 &amp;&amp; window.quality &lt; 90) {
 	document.getElementById(&#39;700&#39;).style.display = &#39;none&#39;;
 	document.getElementById(&#39;20090&#39;).style.display = &#39;none&#39;;
 }
@@ -558,7 +569,10 @@ The crew intends to make a desperate effort to return back towards earth. They w
 
 Personell at headquarters is greatly distraught at the loss of an astronaut, but the platinum in tow has not been forgotten.&lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;center&gt; [[Next-&gt;Single Loss]] &lt;/center&gt;</tw-passagedata>
-<tw-passagedata pid="48" name="rescue success" tags="" position="383,3535">Double-click this passage to edit it.
+<tw-passagedata pid="48" name="rescue success" tags="" position="383,3535">As soon as you give the all clear as the storm passed, the pilot started turning the ship around and the crew anxiously waited for the ship to land back on the asteroid. &lt;br&gt;&lt;br&gt;
+*Whoosh*&lt;br&gt;&lt;br&gt;
+As the ship finished depressurizating the chamber, the crew members rushed out towards the temporary shelter they built before to search for the member left behind.&lt;br&gt;
+As they closed the door of the pressurizing chamber behind them, the chamber started to fill up with fresh air. They anxiously took off their helmets of the EVA suits. As the other door slowly opens, they saw the member left behind standing on the other side of the door.&lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;center&gt;
 [[Next-&gt;towards earth with successful rescue]]
 &lt;/center&gt;</tw-passagedata>
